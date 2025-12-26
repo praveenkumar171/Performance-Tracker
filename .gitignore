@@ -1,0 +1,37 @@
+# Environment variables (secrets, passwords)
+.env
+.env.local
+.env.*.local
+
+# Node modules
+node_modules/
+npm-debug.log
+yarn-error.log
+
+# Build outputs
+dist/
+build/
+*.tsbuildinfo
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+
+# Logs
+logs/
+*.log
+
+# OS
+Thumbs.db
+.DS_Store
+
+# Dependencies lock files (optional - share with team)
+# package-lock.json
+# yarn.lock
+
+# Compiled CSS
+*.css.map
