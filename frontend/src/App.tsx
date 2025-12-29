@@ -5,6 +5,7 @@ import Register from './pages/Register';
 import Login from './pages/Login';
 import Profile from './pages/Profile';
 import DailyTracker from './pages/DailyTracker';
+import DailyReport from './pages/DailyReport';
 import './styles/globals.css';
 
 const ProtectedRoute: React.FC<{ children: React.ReactNode }> = ({ children }) => {
@@ -28,7 +29,7 @@ function AppContent() {
         }}>
           <h2 style={{ fontSize: '20px', fontWeight: 700, color: '#333' }}>Performance Tracker</h2>
           <div style={{ display: 'flex', gap: '16px', alignItems: 'center' }}>
-            <span style={{ fontSize: '14px', color: '#666' }}>{user?.username}</span>
+            <span style={{ fontSize: '14px', color: '#666' }}>{user?.email}</span>
             <button
               onClick={logout}
               style={{
@@ -64,6 +65,14 @@ function AppContent() {
             element={
               <ProtectedRoute>
                 <DailyTracker />
+              </ProtectedRoute>
+            }
+          />
+          <Route
+            path="/report"
+            element={
+              <ProtectedRoute>
+                <DailyReport />
               </ProtectedRoute>
             }
           />

@@ -163,6 +163,20 @@ const Profile: React.FC = () => {
                 >
                   📊 Go to Daily Tracker
                 </button>
+                <button
+                  onClick={() => navigate('/report')}
+                  style={{
+                    padding: '10px 20px',
+                    backgroundColor: '#ff9500',
+                    color: 'white',
+                    border: 'none',
+                    borderRadius: '6px',
+                    cursor: 'pointer',
+                    fontWeight: 600,
+                  }}
+                >
+                  📈 View Daily Report
+                </button>
               </div>
             </>
           )}

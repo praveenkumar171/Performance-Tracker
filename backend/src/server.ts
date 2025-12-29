@@ -4,6 +4,7 @@ import dotenv from 'dotenv';
 import { initDatabase } from './db/schema';
 import authRouter from './routes/authRoutes';
 import dailyRouter from './routes/dailyRoutes';
+import heatmapRouter from './routes/heatmapRoutes';
 
 dotenv.config();
 
@@ -23,6 +24,7 @@ initDatabase().catch((err) => {
 // Routes
 app.use('/api/auth', authRouter);
 app.use('/api/daily', dailyRouter);
+app.use('/api/heatmap', heatmapRouter);
 
 // Health check
 app.get('/api/health', (req, res) => {

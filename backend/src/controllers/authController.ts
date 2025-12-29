@@ -16,6 +16,22 @@ interface User {
 // In-memory storage for testing (without database)
 const testUsers: { [key: string]: User } = {};
 
+// Initialize with a test user for demo purposes
+const initTestUser = async () => {
+  const hashedPassword = await bcryptjs.hash('password123', 10);
+  testUsers['test@example.com'] = {
+    id: 1,
+    name: 'Test User',
+    email: 'test@example.com',
+    password_hash: hashedPassword,
+    career_goal: 'AI Engineer',
+    joined_date: new Date().toISOString(),
+  };
+};
+
+// Call on module load
+initTestUser().catch(console.error);
+
 // Register
 export const register = async (req: AuthRequest, res: Response) => {
   try {
